@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Posts from './component/Posts'
+import Posts from './component/Posts';
+import PostForm from './component/PostForm';
 class App extends Component {
   render() {
     return (
@@ -21,6 +22,8 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <PostForm/>
+        <hr/>
         <Posts/>
       </div>
     );
