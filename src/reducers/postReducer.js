@@ -8,11 +8,15 @@ const initialState = {
 export default function(state = initialState, actions){
     switch(actions.type){
         case FETCH_POST:
-        console.log('reducer');
             return {
                 ...state,
                 items : actions.payload
-            }
+            };
+        case NEW_POST:
+            return {
+                ...state,
+                item : actions.payload
+            };
         default:
             return state;
     }

@@ -10,6 +10,12 @@ class Posts extends Component {
         this.props.fetchPost();
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.newPost){
+            this.props.posts.unshift(nextProps.newPost)
+        }
+    }
+
     render() {
         const postItems = this.props.posts.map(post => (
             <div key={post.id}>
@@ -32,7 +38,8 @@ Posts.protoTypes = {
 }
 
 const mapStateToProps = state => ({
-    posts: state.posts.items
+    posts: state.posts.items,
+    newPost: state.posts.item
 })
 
 export default connect(mapStateToProps,{fetchPost})(Posts);
